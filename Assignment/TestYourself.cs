@@ -18,5 +18,27 @@ namespace C_ASSIGNMENT_BUILDER.CurrentAssignment
             Assert.True(isTrue);
             Assert.Equal("Hello, world!", text);
         }
+
+        [Assignment(2)]
+        public void TestClassesAndObjects()
+        {
+            var person = new Person { Name = "John Doe", Age = 30 };
+            var anotherPerson = new Person { Name = "Jane Doe", Age = 25 };
+
+            Assert.Equal("John Doe", person.Name);
+            Assert.Equal(30, person.Age);
+            Assert.NotEqual(person, anotherPerson);
+        }
+
+        [Assignment(3)]
+        public void TestDataStructures()
+        {
+            var list = new List<int> { 1, 2, 3, 4, 5 };
+            var dictionary = new Dictionary<string, int> { { "one", 1 }, { "two", 2 } };
+
+            Assert.Equal(5, list.Count);
+            Assert.Equal(1, dictionary["one"]);
+            Assert.Equal(2, dictionary["two"]);
+        }
     }
 }
